@@ -1,0 +1,54 @@
+Reset CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  
+  /* Main CSS */
+  .grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    grid-auto-rows: 150px; /* Base row height */
+    grid-auto-flow: dense; /* Fill available space efficiently */
+  }
+  
+  .grid-wrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .grid-wrapper > div > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .grid-wrapper .wide {
+    grid-column: span 2; /* Spans 2 columns */
+    grid-row: span ; /* Spans 2 rows */
+  }
+  
+  .grid-wrapper .tall {
+    grid-row: span 2; /* Spans 2 rows */
+  }
+  
+  .grid-wrapper .big {
+    grid-column: span 2; /* Spans 2 columns */
+    grid-row: span 2; /* Spans 2 rows */
+  }
+  

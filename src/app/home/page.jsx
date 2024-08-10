@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Images from "../images/page";
 import bgImg from "../../assets/bg3.jpg";
 import Image from "next/image";
+import PopularVideos from "../videos/page";
 import { CiSearch } from "react-icons/ci";
 
 const HomePage = () => {
@@ -38,7 +39,7 @@ const HomePage = () => {
         />
 
         <div className=" inset-0 max-lg:mt-36 lg:mt-32 flex items-center justify-center">
-          <div className="w-[60%] bg-white z-20 rounded-full m-10">
+          <div className="w-[60%] bg-white z-10 rounded-full m-10">
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row justify-center items-center w-full pl-3">
                 <CiSearch className="font-bold w-8 max-md:hidden" />
@@ -68,8 +69,11 @@ const HomePage = () => {
       {/* Navbar */}
 
       {/* Ensure Images component starts exactly below the background image */}
-      <div className="relative z-10 mt-[13rem] ">
-        <Images />
+      <div className="relative z-10 mt-[13rem] rounded-md">
+        {/* <Images /> */}
+      </div>
+      <div className="relative z-10  mt-[13rem] rounded-md p-2">
+        <PopularVideos />
       </div>
     </div>
   );

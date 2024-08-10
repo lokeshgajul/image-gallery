@@ -10,13 +10,16 @@ const SearchPage = () => {
   const query = pathname.get("query");
   const [searchImages, setSearchImages] = useState([]);
 
-  const searchImage = useCallback(async () => {
+  console.log("query ", query);
+
+  const searchImageWithQuery = async () => {
     try {
       const response = await fetch(
         `https://api.pexels.com/v1/search?query=${query}&per_page=10`,
         {
           headers: {
-            Authorization: "YOUR_API_KEY", // Replace with your Pexels API key
+            Authorization:
+              "XKuxmXonSghiHU06ZHz4fAwvpGh7Q83kWPQAaTsuJp2dQkv3MBCxtHlj", // Replace with your Pexels API key
           },
         }
       );
@@ -25,15 +28,11 @@ const SearchPage = () => {
     } catch (error) {
       console.error("Error fetching images:", error);
     }
-  }, [query]); // Dependencies array
+  };
 
-  // Use useEffect to call the searchImage function whenever the query changes
   useEffect(() => {
-    if (query) {
-      searchImage();
-    }
-  }, [query, searchImage]);
-
+    searchImageWithQuery();
+  }, [query]);
   return (
     <div className="  p-5 ">
       <h1 className="text-2xl font-semibold mb-4 ">Search Results : {query}</h1>
@@ -44,19 +43,10 @@ const SearchPage = () => {
         {searchImages ? (
           searchImages.map((image, index) => (
             <div key={index} className="w-full h-52 group relative">
-              <Image
-                src={image.src.original}
-                alt="Image not found"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-md shadow-lg group-hover:rounded-md"
-                placeholder="blur"
-                blurDataURL={image.src.original}
-                quality={100}
-                style={{
-                  borderRadius: "6px",
-                  boxShadow: "revert-layer",
-                }}
+              <img
+                src={image.src.large}
+                className="w-full h-full object-cover rounded-md"
+                alt={`Image ${index}`}
               />
               <div className="absolute inset-0 flex bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 group-hover:rounded-md transition-opacity">
                 <p className=" text-white top-0 absolute text-[12px] pl-4 pt-4 w-[55%] font-medium tracking-[.3px]">
