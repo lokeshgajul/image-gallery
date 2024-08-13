@@ -35,10 +35,10 @@ const page = () => {
       </div>
       <div className="relative z-10 flex flex-wrap pl-4 pr-4 pt-4">
         {images?.map((item, index) => (
-          <div key={index} className="w-[95%] sm:w-1/2 md:w-1/3 lg:w-1/4 h-72">
+          <div key={index} className="w-[95%] sm:w-1/2 md:w-1/3 lg:w-1/4 h-72 ">
             <img
               src={item.src.large}
-              className="w-full h-full object-cover rounded-xl p-1"
+              className="w-full h-full object-cover rounded-xl p-1.5 "
               alt={`Image ${index}`}
             />
           </div>

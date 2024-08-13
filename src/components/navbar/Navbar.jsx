@@ -13,14 +13,15 @@ function Navbar() {
     setDrawerOpen(!drawerOpen);
   };
 
-  const textColor = path === "/" ? "text-white" : "text-black";
+  const textColor = path === "/" ? "text-white" : "text-white";
+  const bgColor = path === "/" ? "bg-transparent" : "bg-[#363936]";
 
   return (
-    <div>
-      <div className="flex flex-row justify-between items-center ml-5 mr-5 ">
+    <div className={`${bgColor}`}>
+      <div className={`flex flex-row justify-between items-center ml-5 mr-5  `}>
         <div>
           <h2
-            className={`${textColor} font-semibold tracking-wide text-lg max-sm:mt-8`}
+            className={`${textColor} font-semibold tracking-wide text-lg max-sm:mt-7`}
           >
             Art & Image Gallery
           </h2>
@@ -34,7 +35,7 @@ function Navbar() {
         </div>
 
         <div
-          className={`fixed top-0 right-0 h-full w-64 z-20 bg-slate-600 transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 right-0 h-full w-64 z-20 bg-slate-600 transition-transform duration-300 ease-in-out  ${
             drawerOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -52,11 +53,7 @@ function Navbar() {
                 About
               </Link>
             </div>
-            <div className="mt-5 p-1 border-b-2">
-              <Link href="/gallery" className="text-white cursor-pointer">
-                Gallery
-              </Link>
-            </div>
+
             <div className="mt-5 p-1 border-b-2">
               <Link href="/contact" className="text-white cursor-pointer">
                 Contact
@@ -65,7 +62,7 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="flex flex-row max-sm:hidden">
+        <div className="hidden sm:flex flex-row ]">
           <div className="m-5">
             <Link href="/" className={`${textColor} cursor-pointer`}>
               Home
@@ -76,11 +73,7 @@ function Navbar() {
               About
             </Link>
           </div>
-          <div className="m-5">
-            <Link href="/gallery" className={`${textColor} cursor-pointer`}>
-              Gallery
-            </Link>
-          </div>
+
           <div className="m-5">
             <Link href="/contact" className={`${textColor} cursor-pointer`}>
               Contact

@@ -1,0 +1,13 @@
+details[open] summary svg {
+    transform: rotate(180deg);
+  }
+  
+
+
+details[open] summary {
+    background-color: #f3f4f6;
+}
+
+details {
+    border-radius: 10px;
+}

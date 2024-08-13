@@ -8,7 +8,7 @@ const PopularVideosPage = () => {
   const getPopularVideos = async () => {
     try {
       const response = await axios.get(
-        `https://api.pexels.com/videos/popular?per_page=18`,
+        `https://api.pexels.com/videos/popular?per_page=16`,
         {
           headers: {
             Accept: "application/json",
@@ -37,7 +37,7 @@ const PopularVideosPage = () => {
         Popular Videos
       </h2>
 
-      <div className="grid grid-cols-2 max-[450px]:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-2">
+      <div className="grid grid-cols-2 max-[450px]:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ml-4 mr-4 pt-4">
         {popularVideos?.map((video) => {
           const videoHeight =
             video.video_files[0].height > 400

@@ -26,7 +26,7 @@ const HomePage = () => {
           alt="Mountains"
           src={bgImg}
           placeholder="blur"
-          quality={100}
+          quality={50}
           style={{
             objectFit: "cover",
             zIndex: -1,
@@ -34,12 +34,17 @@ const HomePage = () => {
             height: 500,
             position: "absolute",
             top: 0,
-            opacity: 0.9,
+            opacity: 0.89,
           }}
         />
 
-        <div className=" inset-0 max-lg:mt-36 lg:mt-32 flex items-center justify-center">
-          <div className="w-[60%] bg-white z-10 rounded-full m-10">
+        <div></div>
+        <div className=" inset-0 max-lg:mt-24 lg:mt-24 flex items-center flex-col justify-center ">
+          <p className="max-sm:text-[16px] max-md:text-[24px]  text-[28px] z-20 shadow-sm text-white w-1/2 font-semibold tracking-[.2px]  flex items-center">
+            The best free stock photos, royalty free images & videos shared by
+            creators.
+          </p>
+          <div className="w-[60%] bg-white  rounded-full max-lg:m-4  m-8">
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row justify-center items-center w-full pl-3">
                 <CiSearch className="font-bold w-8 max-md:hidden" />
@@ -69,11 +74,16 @@ const HomePage = () => {
       {/* Navbar */}
 
       {/* Ensure Images component starts exactly below the background image */}
-      <div className="relative z-10 mt-[13rem] rounded-md">
-        {/* <Images /> */}
+      <div className="relative rounded-md ">
+        <div className="pt-5 mt-40">
+          <Images />
+        </div>
       </div>
-      <div className="relative z-10  mt-[13rem] rounded-md p-2">
-        <PopularVideos />
+
+      <div className="relative rounded-md ">
+        <div className="mt-3">
+          <PopularVideos />
+        </div>
       </div>
     </div>
   );
